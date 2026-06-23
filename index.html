@@ -1,106 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Fruit Ninja Webcam FREE</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #090909;
-      color: white;
-      text-align: center;
-    }
-
-    header {
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #111, #003300);
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 20px;
-      color: #ccc;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 30px;
-      background: #00cc44;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .card {
-      background: #151515;
-      margin: 20px 0;
-      padding: 25px;
-      border-radius: 15px;
-      border: 1px solid #00cc44;
-    }
-
-    code {
-      background: #222;
-      padding: 8px 12px;
-      border-radius: 6px;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    footer {
-      padding: 30px;
-      color: #777;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Ninja Webcam PRO</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="app">
+    <section class="hero">
+      <h1>🍉 Fruit Ninja Webcam PRO</h1>
+      <p>Играй прямо в браузере: камера ищет фиолетовый контроллер, а ты разрезаешь фрукты.</p>
 
-<header>
-  <h1>🍉 Fruit Ninja Webcam FREE</h1>
-  <p>Играй через камеру. Маши рукой и разрезай фрукты.</p>
-  <a class="button" href="fruit_ninja_webcam.py" download>Скачать FREE версию</a>
-</header>
+      <div class="buttons">
+        <button id="startBtn">▶ Играть</button>
+        <button id="calibrateBtn">🟣 Калибровать цвет</button>
+        <button id="resetBtn">↻ Рестарт</button>
+      </div>
 
-<section>
-  <div class="card">
-    <h2>Как играть?</h2>
-    <p>Запусти игру, включи камеру и двигай рукой перед экраном.</p>
-  </div>
+      <p class="hint">
+        Разреши доступ к камере. Поднеси фиолетовый предмет в белый квадрат и нажми «Калибровать цвет».
+      </p>
+    </section>
 
-  <div class="card">
-    <h2>Установка</h2>
-    <p>Установи Python и библиотеки:</p>
-    <code>pip install opencv-python numpy</code>
-  </div>
+    <section class="game-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="canvas" width="960" height="720"></canvas>
+    </section>
 
-  <div class="card">
-    <h2>Запуск</h2>
-    <code>python fruit_ninja_webcam.py</code>
-  </div>
+    <section class="panel">
+      <div>Score: <b id="score">0</b></div>
+      <div>Lives: <b id="lives">3</b></div>
+      <div>High Score: <b id="highScore">0</b></div>
+      <div id="status">Status: waiting</div>
+    </section>
 
-  <div class="card">
-    <h2>PRO версия</h2>
-    <p>Скоро: игра с фирменным цветным контроллером, режимами, рекордами и Джарвисом.</p>
-  </div>
-</section>
+    <section class="instructions">
+      <h2>Как играть</h2>
+      <p>Нужен яркий фиолетовый предмет: маркер, носок, мячик, палочка. Маши им перед камерой как мечом.</p>
+      <p>Фрукты дают очки. Бомбы отнимают жизнь. Если пропустишь фрукт — тоже минус жизнь.</p>
+    </section>
+  </main>
 
-<footer>
-  Fruit Ninja Webcam FREE © 2026
-</footer>
-
+  <script src="game.js"></script>
 </body>
 </html>
