@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEON CLICKER</title>
     <style>
-        /* СТИЛИ ВНУТРИ ОДНОГО ФАЙЛА */
+        /* Стили теперь живут внутри HTML */
         body { background: #000; color: #00f3ff; font-family: 'Courier New', monospace; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        h1 { text-shadow: 0 0 10px #00f3ff; }
         #clicker-btn { width: 200px; height: 200px; border-radius: 50%; border: 5px solid #00f3ff; background: transparent; color: #00f3ff; font-size: 2rem; cursor: pointer; box-shadow: 0 0 20px #00f3ff; transition: 0.1s; }
         #clicker-btn:active { transform: scale(0.9); box-shadow: 0 0 50px #00f3ff; }
-        #upgrade-btn { margin-top: 20px; padding: 10px; cursor: pointer; background: #222; border: 1px solid #00f3ff; color: #fff; }
+        #upgrade-btn { margin-top: 20px; padding: 10px; cursor: pointer; background: #111; border: 1px solid #00f3ff; color: #fff; }
     </style>
 </head>
 <body>
@@ -20,7 +21,7 @@
     <button id="upgrade-btn">Купить улучшение (10 очков)</button>
 
     <script>
-        // ЛОГИКА ВНУТРИ ОДНОГО ФАЙЛА
+        /* Логика теперь живет внутри HTML */
         let score = 0;
         let multiplier = 1;
         let upgradeCost = 10;
