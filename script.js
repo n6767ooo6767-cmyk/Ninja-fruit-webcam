@@ -1,104 +1,19 @@
-// =========================
-// MiniVerse v1.0
-// script.js
-// =========================
+body { margin: 0; background: #0e1621; color: #fff; font-family: 'Arial', sans-serif; text-align: center; }
+h1 { padding-top: 20px; text-shadow: 0 0 10px #fff; }
 
-console.log("MiniVerse loaded!");
+#game-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; padding: 40px; }
 
-// Анимация появления карточек
-const cards = document.querySelectorAll(".category, .game-card");
+.neon-btn {
+    padding: 20px; cursor: pointer; background: transparent; border: 2px solid #00f3ff;
+    color: #00f3ff; font-weight: bold; text-transform: uppercase;
+    box-shadow: 0 0 10px #00f3ff, inset 0 0 10px #00f3ff;
+    transition: 0.3s; animation: pulse 2s infinite;
+}
 
-cards.forEach((card, index) => {
+.neon-btn:hover { background: #00f3ff; color: #000; box-shadow: 0 0 30px #00f3ff; }
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
-    setTimeout(() => {
-
-        card.style.transition = "0.5s";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0px)";
-
-    }, index * 120);
-
-});
-
-// Клик по категориям
-document.querySelectorAll(".category").forEach(category => {
-
-    category.addEventListener("click", () => {
-
-        const name = category.querySelector("h3").textContent;
-
-        alert("Раздел \"" + name + "\" скоро появится!");
-
-    });
-
-});
-
-// Кнопки Play
-document.querySelectorAll(".game-card button").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const game = button.parentElement.querySelector("h3").textContent;
-
-        alert("Запуск игры: " + game);
-
-        // Потом заменим на:
-        // location.href = "games/.../index.html";
-
-    });
-
-});
-
-// Параллакс карточек
-document.addEventListener("mousemove", e => {
-
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    cards.forEach(card => {
-
-        card.style.transform =
-            `rotateY(${(x - 0.5) * 6}deg)
-             rotateX(${(0.5 - y) * 6}deg)`;
-
-    });
-
-});
-
-// Возврат положения
-document.addEventListener("mouseleave", () => {
-
-    cards.forEach(card => {
-
-        card.style.transform = "";
-
-    });
-
-});
-
-// Эффект нажатия
-cards.forEach(card => {
-
-    card.addEventListener("mousedown", () => {
-
-        card.style.transform += " scale(.96)";
-
-    });
-
-    card.addEventListener("mouseup", () => {
-
-        card.style.transform = "";
-
-    });
-
-});
-
-// Небольшое приветствие
-setTimeout(() => {
-
-    console.log("Добро пожаловать в MiniVerse!");
-
-}, 1000);
+#game-container { position: relative; }
+canvas { display: block; width: 100vw; height: 90vh; background: #000; }
+#backBtn { position: absolute; top: 10px; left: 10px; z-index: 10; padding: 10px; cursor: pointer; }
