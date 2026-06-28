@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0f1117;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top,#4ea5ff22,transparent 40%),
+        radial-gradient(circle at bottom,#9c27b022,transparent 40%);
+    z-index:-1;
+}
+
+.container{
+    width:min(900px,95%);
+    background:#181d29;
+    border:1px solid #30384d;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 0 35px rgba(78,165,255,.2);
+}
+
+h1{
+    text-align:center;
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+p{
+    text-align:center;
+    color:#bdbdbd;
+    margin-bottom:30px;
+}
+
+.target-area,
+.mix-area{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.colorBox{
+    width:220px;
+    height:220px;
+    margin:15px auto;
+    border-radius:18px;
+    border:3px solid #444;
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+}
+
+.sliders{
+    margin-top:30px;
+}
+
+label{
+    display:block;
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+input[type=range]{
+    width:100%;
+    margin-top:8px;
+    accent-color:#4ea5ff;
+    cursor:pointer;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:18px;
+    border:none;
+    border-radius:12px;
+    background:#4ea5ff;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    background:#67b4ff;
+    transform:translateY(-2px);
+}
+
+#result{
+    margin-top:25px;
+    text-align:center;
+    color:#4ea5ff;
+    font-size:30px;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin-top:30px;
+    text-decoration:none;
+    color:#aaa;
+    transition:.2s;
+}
+
+.back:hover{
+    color:#4ea5ff;
+}
+
+@media(max-width:700px){
+
+.container{
+    padding:20px;
+}
+
+.colorBox{
+    width:170px;
+    height:170px;
+}
+
+h1{
+    font-size:34px;
+}
+
+#result{
+    font-size:24px;
+}
+
+}
