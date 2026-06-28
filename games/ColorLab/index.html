@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎨 Color Lab</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎨 Color Lab</h1>
+
+<p>Повтори цвет как можно точнее!</p>
+
+<div class="target-area">
+
+<h2>Target Color</h2>
+
+<div id="targetColor" class="colorBox"></div>
+
+</div>
+
+<div class="mix-area">
+
+<h2>Your Color</h2>
+
+<div id="yourColor" class="colorBox"></div>
+
+</div>
+
+<div class="sliders">
+
+<label>🔴 Red
+<input type="range" id="red" min="0" max="255" value="128">
+</label>
+
+<label>🟢 Green
+<input type="range" id="green" min="0" max="255" value="128">
+</label>
+
+<label>🔵 Blue
+<input type="range" id="blue" min="0" max="255" value="128">
+</label>
+
+</div>
+
+<button id="check">Check</button>
+
+<h2 id="result">Accuracy: 0%</h2>
+
+<button id="next">Next Color</button>
+
+<a href="../../index.html" class="back">
+← Back
+</a>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
