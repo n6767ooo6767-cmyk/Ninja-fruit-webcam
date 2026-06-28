@@ -49,3 +49,17 @@ function launchGame(id) {
     }
     loop();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('game-list');
+    
+    // Создаем кнопки
+    for (let i = 1; i <= 50; i++) {
+        let btn = document.createElement('button');
+        btn.className = 'neon-btn';
+        btn.innerText = `Игра ${i}`;
+        btn.style.cssText = `border-color: hsl(${i * 7}, 100%, 50%); color: hsl(${i * 7}, 100%, 50%);`;
+        btn.onclick = () => alert("Запуск игры " + i); // Тестовый клик
+        list.appendChild(btn);
+    }
+});
